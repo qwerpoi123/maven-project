@@ -1,0 +1,5 @@
+FROM ubuntu:latest
+RUN apt-get update && apt-get install apache2
+RUN rm -rf /var/www/html/index.html
+RUN cat "this is the first pipeline" > /var/www/html/index.html
+CMD apachectl -D FOREGROUND
